@@ -23,7 +23,8 @@ public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
         _cacheSettings = configuration.GetSection("CacheSettings").Get<CacheSettings>();
     }
 
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken,
+                                        RequestHandlerDelegate<TResponse> next)
     {
         TResponse response;
         if (request.BypassCache) return await next();
