@@ -6,4 +6,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Encryption\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Hashing\" />
+    <Folder Include="JWT\" />
+    <Folder Include="OtpAuthenticator\" />
+    <Folder Include="EmailAuthenticator\" />
+    <Folder Include="Dtos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.27.0" />
+  </ItemGroup>
+
 </Project>
