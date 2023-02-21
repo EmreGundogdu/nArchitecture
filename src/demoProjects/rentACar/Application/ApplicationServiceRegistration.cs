@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Application.Features.someFeature.Rules;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -11,6 +12,7 @@ namespace Application
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped<BrandRules>();
             return services;
         }
     }
