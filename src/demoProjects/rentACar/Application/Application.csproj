@@ -19,8 +19,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Features\Brands\Rules\" />
-	  <Folder Include="Features\Brands\Profile\" />
 	  <Folder Include="Features\Brands\Constants\" />
 	  <Folder Include="Features\Brands\Models\" />
 	  <Folder Include="Features\Brands\Queries\" />
