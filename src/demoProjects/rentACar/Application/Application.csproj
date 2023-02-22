@@ -24,7 +24,6 @@
 	  <Folder Include="Features\Models\Rules\" />
 	  <Folder Include="Features\Models\Profiles\" />
 	  <Folder Include="Features\Models\Constants\" />
-	  <Folder Include="Features\Models\Queries\" />
 	  <Folder Include="Features\Models\Commands\" />
 	</ItemGroup>
 
