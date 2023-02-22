@@ -1,5 +1,6 @@
 ﻿using Application.Features.Brands.Commands.CreateBrand;
 using Application.Features.Brands.Dtos;
+using Application.Features.Brands.Queries.GetBrandById;
 using Application.Features.Brands.Queries.GetListBrand;
 using Core.Application.Requests;
 using Microsoft.AspNetCore.Http;
@@ -26,10 +27,10 @@ namespace WebAPI.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetList([FromQuery] GetListBrandQuery getListBrandQuery)
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetList([FromRoute] GetBrandByIdQuery getBrandByIdQuery)
         {
-            var result = await Mediator.Send(getListBrandQuery);
+            var result = await Mediator.Send(getBrandByIdQuery);
             return Ok(result);
         }
     }
