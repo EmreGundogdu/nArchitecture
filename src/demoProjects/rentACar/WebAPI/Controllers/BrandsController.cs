@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class BrandsController : BaseController
     {
@@ -22,6 +22,13 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
             GetListBrandQuery getListBrandQuery = new() { PageRequest = pageRequest };
+            var result = await Mediator.Send(getListBrandQuery);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetList([FromQuery] GetListBrandQuery getListBrandQuery)
+        {
             var result = await Mediator.Send(getListBrandQuery);
             return Ok(result);
         }
