@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{Id}")]
-        public async Task<IActionResult> GetList([FromRoute] GetBrandByIdQuery getBrandByIdQuery)
+        public async Task<IActionResult> GetById([FromRoute] GetBrandByIdQuery getBrandByIdQuery)
         {
             var result = await Mediator.Send(getBrandByIdQuery);
             return Ok(result);
